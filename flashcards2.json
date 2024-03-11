@@ -1,0 +1,6 @@
+[
+    {
+      "term": "Poop n Pee",
+      "definition": "A network architecture where a server provides resources or services to clients. Servers are always-on hosts, potentially scaled by data centers, while clients may have dynamic IP addresses and be intermittently connected."
+    }
+]

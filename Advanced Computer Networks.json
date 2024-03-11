@@ -1,0 +1,123 @@
+[
+    {
+      "term": "Client-Server Architecture",
+      "definition": "A network architecture where a server provides resources or services to clients. Servers are always-on hosts, potentially scaled by data centers, while clients may have dynamic IP addresses and be intermittently connected."
+    },
+    {
+      "term": "Peer-to-Peer (P2P) Architecture",
+      "definition": "A decentralized network architecture where all nodes or participants share part of their resources. Peers are both suppliers and consumers of resources, facilitating direct exchange without the need for central coordination."
+    },
+    {
+      "term": "HTTP Non-Persistent Connection",
+      "definition": "Each request from a client to a server requires a separate TCP connection, making the process slower due to the need for multiple connections to fetch multiple objects."
+    },
+    {
+      "term": "HTTP Persistent Connection",
+      "definition": "A mode where a single TCP connection is used to send and receive multiple HTTP requests/responses, reducing the overhead and latency associated with establishing multiple connections."
+    },
+    {
+      "term": "DNS (Domain Name System)",
+      "definition": "A hierarchical decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It translates more readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices."
+    },
+    {
+      "term": "Web Cache",
+      "definition": "A technology used to temporarily store web documents, such as HTML pages and images, to reduce server lag, bandwidth usage, and perceived delays in content loading."
+    },
+    {
+      "term": "Conditional GET",
+      "definition": "A feature of HTTP that allows a web cache to ask a server if a stored copy of a document has changed. If not, the server responds with a '304 Not Modified' status, reducing bandwidth by not sending the document again."
+    },
+    {
+      "term": "BitTorrent",
+      "definition": "A P2P file sharing protocol used for distributing large amounts of data. It segments files into pieces and distributes them across the network, allowing for efficient data distribution among multiple peers."
+    },
+    {
+      "term": "AJAX (Asynchronous JavaScript and XML)",
+      "definition": "A technique in web development that allows a web page to communicate with a server asynchronously, without reloading the page, enabling the creation of interactive web applications."
+    },
+    {
+      "term": "WebSockets",
+      "definition": "A protocol providing full-duplex communication channels over a single TCP connection, allowing for real-time data exchange between a client and a server."
+    },
+    {
+        "term": "Transport Layer Services",
+        "definition": "Provides logical communication between application processes running on different hosts, including services like multiplexing/demultiplexing, connectionless and connection-oriented transport."
+      },
+      {
+        "term": "UDP (User Datagram Protocol)",
+        "definition": "A connectionless protocol offering minimal, unreliable, unordered delivery without congestion control mechanisms. Used for applications requiring speed and efficiency over reliability."
+      },
+      {
+        "term": "TCP (Transmission Control Protocol)",
+        "definition": "A connection-oriented protocol that provides reliable, ordered delivery of a byte stream between applications. Includes flow and congestion control mechanisms."
+      },
+      {
+        "term": "TCP Congestion Control",
+        "definition": "Mechanisms within TCP to prevent network congestion by adjusting the rate of data transmission based on the network capacity."
+      },
+      {
+        "term": "Multiplexing and Demultiplexing",
+        "definition": "Techniques used to manage multiple data streams within a network. Multiplexing combines multiple signals into one signal, while demultiplexing does the reverse."
+      },
+      {
+        "term": "Reliable Data Transfer Protocols",
+        "definition": "Protocols designed to ensure accurate delivery of data over an unreliable network, involving mechanisms like acknowledgments, timers, and retransmissions."
+      },
+      {
+        "term": "Pipelined Protocols",
+        "definition": "Techniques in network protocols allowing multiple packets to be in transit simultaneously, increasing network utilization and efficiency."
+      },
+      {
+        "term": "Go-Back-N and Selective Repeat",
+        "definition": "Two strategies for handling out-of-order packets in pipelined protocols. Go-Back-N retransmits all packets after a lost packet, while Selective Repeat only retransmits the lost packet."
+      },
+      {
+        "term": "TCP Fast Retransmit",
+        "definition": "A mechanism that initiates retransmission of lost packets upon receiving a number of duplicate acknowledgements, without waiting for a timeout."
+      },
+      {
+        "term": "TCP Flow Control",
+        "definition": "A mechanism to prevent the sender from overwhelming the receiver by adjusting the rate of data transmission based on the receiver's buffer capacity."
+      },
+      {
+        "term": "Symmetric-Key Cryptography",
+        "definition": "A type of encryption where the same key is used for both encryption and decryption of messages, ensuring confidentiality. Examples include DES, Triple DES, IDEA, and AES."
+      },
+      {
+        "term": "Asymmetric-Key Cryptography",
+        "definition": "Encryption that uses a pair of keys, a public key for encryption and a private key for decryption, solving the key exchange problem. Examples are RSA, Diffie-Hellman, ElGamal, and ECC."
+      },
+      {
+        "term": "Digital Signatures",
+        "definition": "A cryptographic technique that allows verification of the sender's identity and ensures message integrity, analogous to a handwritten signature but implemented using public key cryptography."
+      },
+      {
+        "term": "Secure Socket Layer (SSL)",
+        "definition": "A security protocol that provides confidentiality and integrity of data in transmission over the Internet using a combination of cryptographic processes."
+      },
+      {
+        "term": "IPsec",
+        "definition": "A suite of protocols designed to secure Internet Protocol (IP) communications by authenticating and encrypting each IP packet in a data stream."
+      },
+      {
+        "term": "DNSSEC",
+        "definition": "Extensions to the Domain Name System (DNS) providing authentication of DNS data, authenticated denial of existence, and data integrity, but not confidentiality."
+      },
+      {
+        "term": "RSA Cryptography",
+        "definition": "A public-key cryptosystem for secure data transmission using asymmetric key encryption, based on the mathematical problem of factoring large integers."
+      },
+      {
+        "term": "Diffie-Hellman Key Exchange",
+        "definition": "A method allowing two parties to jointly establish a shared secret key used for encrypted communication, over an insecure channel, without having met."
+      },
+      {
+        "term": "X.509 Certificates",
+        "definition": "A standard format for public key certificates, specifying the use of public key infrastructure (PKI) to verify that a public key belongs to the issuer."
+      },
+      {
+        "term": "Message Digest/Cryptographic Hash",
+        "definition": "A fixed-size, cryptographic hash function output used to provide integrity checks of data. Common algorithms include MD5, SHA-1, and SHA-2."
+      }
+  ]
+  
