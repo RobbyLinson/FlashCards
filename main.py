@@ -2,6 +2,8 @@ import os
 import tkinter as tk
 import random
 import json
+import tkinter as tk
+from tkinter import ttk 
 from tkinter import messagebox
 
 # Function to load flashcards from a JSON file
@@ -24,6 +26,12 @@ def display_flashcards_gui():
     root = tk.Tk()
     root.title("Flashcard App")
     root.geometry("800x600")
+    style = ttk.Style()
+    style.theme_use('alt')  # This is an example, you can choose from available themes: 'default', 'classic', 'clam', 'alt', 'vista', etc.
+    style.configure('TButton', padding=6, relief="flat", background="#ccc")
+    style.configure('TLabel', padding=6, background="#eee", font=('Arial', 24))
+    style.configure('Answer.TLabel', font=('Arial', 20), foreground='red', wraplength=400)  # And also here for the Answer style    
+    style.configure('TFrame', background="#ccc")
 
     # Function to go to the next card
     def next_card(event=None):
@@ -54,7 +62,8 @@ def display_flashcards_gui():
     # Function to reveal the answer to the current card
     def reveal_answer(event=None):
         global answer_label
-        answer_label.config(text=flashcards[current_index]['definition'], fg='red')
+        answer_label.config(text=flashcards[current_index]['definition'], style='Answer.TLabel', anchor="center")
+
 
     # Bind keys
     root.bind("<space>", reveal_answer)
@@ -62,32 +71,32 @@ def display_flashcards_gui():
     root.bind("<Left>", prev_card)
 
     # GUI setup
-    question_label = tk.Label(root, text="", font=('Arial', 24), pady=20, wraplength=400)
+    question_label = ttk.Label(root, text="", font=('Arial', 24), padding=20, style='TLabel')
     question_label.pack()
 
-    answer_label = tk.Label(root, text="", font=('Arial', 20), pady=20, wraplength=400)
+    answer_label = ttk.Label(root, text="", font=('Arial', 24), padding=20, style='TLabel')
     answer_label.pack()
 
     # Navigation frame for the buttons
-    navigation_frame = tk.Frame(root)
+    navigation_frame = ttk.Frame(root)
     navigation_frame.pack(side=tk.BOTTOM, fill=tk.X, expand=False)
 
     # Frame for the Show Answer button
-    answer_frame = tk.Frame(root)
+    answer_frame = ttk.Frame(root)
     answer_frame.pack(side=tk.BOTTOM, fill=tk.X, expand=False)
 
     # Navigation buttons
-    prev_card_button = tk.Button(navigation_frame, text="← Prev", command=prev_card)
+    prev_card_button = ttk.Button(navigation_frame, text="← Prev", command=prev_card)
     prev_card_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
-    shuffle_button = tk.Button(navigation_frame, text="Shuffle", command=shuffle_flashcards)
+    shuffle_button = ttk.Button(navigation_frame, text="Shuffle", command=shuffle_flashcards)
     shuffle_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
-    next_card_button = tk.Button(navigation_frame, text="Next →", command=next_card)
+    next_card_button = ttk.Button(navigation_frame, text="Next →", command=next_card)
     next_card_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
     # Show Answer button, placed in the navigation frame alongside the others
-    show_answer_button = tk.Button(answer_frame, text="Show Answer\n(Space)", command=reveal_answer)
+    show_answer_button = ttk.Button(answer_frame, text="Show Answer\n(Space)", command=reveal_answer)
     show_answer_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
 
