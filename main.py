@@ -30,7 +30,7 @@ def display_flashcards_gui():
     style.theme_use('alt')  # This is an example, you can choose from available themes: 'default', 'classic', 'clam', 'alt', 'vista', etc.
     style.configure('TButton', padding=6, relief="flat", background="#ccc")
     style.configure('TLabel', padding=6, background="#eee", font=('Arial', 24))
-    style.configure('Answer.TLabel', font=('Arial', 20), foreground='red', wraplength=400)  # And also here for the Answer style    
+    style.configure('Answer.TLabel', font=('Arial', 20), foreground='red', wraplength=600)  # And also here for the Answer style    
     style.configure('TFrame', background="#ccc")
 
     # Function to go to the next card
@@ -62,11 +62,20 @@ def display_flashcards_gui():
     # Function to reveal the answer to the current card
     def reveal_answer(event=None):
         global answer_label
-        answer_label.config(text=flashcards[current_index]['definition'], style='Answer.TLabel', anchor="center")
+        answer_label.config(text=flashcards[current_index]['definition'], style='Answer.TLabel', anchor="center", justify="center")
 
+
+    def hide_answer(event=None):
+        global answer_label
+        answer_label.config(text="", style='Answer.TLabel', anchor="center", justify="center")
+
+    def back(event=None):
+        root.destroy()
+        initialize_gui()
 
     # Bind keys
-    root.bind("<space>", reveal_answer)
+    root.bind("<Up>", reveal_answer)
+    root.bind("<Down>", hide_answer)
     root.bind("<Right>", next_card)
     root.bind("<Left>", prev_card)
 
@@ -96,8 +105,11 @@ def display_flashcards_gui():
     next_card_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
     # Show Answer button, placed in the navigation frame alongside the others
-    show_answer_button = ttk.Button(answer_frame, text="Show Answer\n(Space)", command=reveal_answer)
+    show_answer_button = ttk.Button(answer_frame, text="\nShow Answer\n", command=reveal_answer)
     show_answer_button.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+    back_button = ttk.Button(text="Back to Hub", command=back)
+    back_button.place(x=0, y=0)
 
 
     shuffle_flashcards()  # Initially shuffle the flashcards
@@ -139,6 +151,8 @@ def initialize_gui():
 
     # Start the GUI
     root.mainloop()
+
+    
 
 if __name__ == "__main__":
     initialize_gui()
