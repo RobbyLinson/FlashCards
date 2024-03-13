@@ -25,11 +25,12 @@ You need Python installed on your system to run the script. Visit [Python's webs
 
 To run the application on Windows, you can use the provided batch file:
 
-1. Double-click the `run_app.bat` file in the project directory.
+1. Double-click the `build.bat` file in the project directory.
 
 #### Linux & macOS
 
 For Linux and macOS, you can start the application through the terminal:
 
 ```bash
-python3 path/to/flashcard_app.py
+python3 path/to/main.py
+
